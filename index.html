@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mark Calatero • Portfolio</title>
+  <meta name="description" content="The portfolio of Mark Calatero — projects, skills, and contact." />
+  <meta name="color-scheme" content="dark light">
+  <link rel="preload" as="image" href="assets/profile.png">
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --card: #0f1520cc;
+      --muted: #9aa4b2;
+      --text: #e6edf3;
+      --primary: #6ea8fe;
+      --accent: #22d3ee;
+      --ring: #1f2937;
+      --maxw: 1100px;
+      --radius: 18px;
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, #1a2a40 0%, transparent 60%),
+        radial-gradient(1000px 500px at 110% 10%, #1b2535 0%, transparent 60%),
+        linear-gradient(180deg, #080b10, #0b0f14);
+      background-attachment: fixed;
+    }
+    a{color:var(--primary); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:24px}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(8px);
+      background: color-mix(in oklab, #0b0f14 70%, transparent);
+      border-bottom: 1px solid #1f2733;
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:12px 24px;
+    }
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.3px}
+    .brand img{width:36px; height:36px; border-radius:50%; object-fit:cover; border:1px solid #2b3442}
+    .nav a.btn{
+      display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid #2b3442;
+    }
+    .navlinks{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+    main{min-height:70vh}
+    .hero{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center;
+      padding:42px 24px 12px; border-radius:var(--radius); margin-top:18px;
+      background: linear-gradient(180deg, #0e1420aa, #0b0f14aa);
+      box-shadow: var(--shadow);
+      border:1px solid #1f2733;
+    }
+    .hero h1{font-size:clamp(28px, 4vw, 44px); line-height:1.15; margin:0 0 12px}
+    .hero p{color:var(--muted); margin:0 0 18px}
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 4px}
+    .chip{padding:8px 12px; border-radius:999px; border:1px solid #273142; background:#0f1722}
+    .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:12px}
+    .btn{
+      background: linear-gradient(180deg, #1f2937, #162032);
+      border:1px solid #2b3442; padding:12px 16px; border-radius:14px; cursor:pointer;
+      color:var(--text);
+    }
+    .btn.primary{background: linear-gradient(180deg, #3b82f6, #2563eb); border:1px solid #3b82f6}
+    .btn:hover{filter: brightness(1.05)}
+    .avatar{
+      width:100%; border-radius:var(--radius); overflow:hidden; border:1px solid #273142;
+      background:#0c1118;
+    }
+    .avatar img{width:100%; height:100%; object-fit:cover; display:block}
+    section{margin-top:36px}
+    h2{font-size:clamp(22px, 3vw, 28px); margin:0 0 12px}
+    .grid{display:grid; gap:16px}
+    .projects{grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))}
+    .card{
+      background:var(--card);
+      border:1px solid #233146;
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+      transition: transform .18s ease, border-color .18s ease;
+      height:100%;
+    }
+    .card:hover{transform: translateY(-2px); border-color:#34547a}
+    .card h3{margin:0 0 6px; font-size:18px}
+    .card p{margin:0 0 10px; color:var(--muted)}
+    .meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
+    .tag{font-size:13px; padding:6px 10px; border-radius:999px; border:1px solid #2b3a55; background:#0f1722}
+    .about{
+      display:grid; grid-template-columns: .8fr 1.2fr; gap:18px;
+    }
+    .about .blurb{background:var(--card); border:1px solid #233146; border-radius:var(--radius); padding:18px}
+    .skills{display:flex; flex-wrap:wrap; gap:10px}
+    .contact .card form{display:grid; gap:12px}
+    input, textarea{
+      background:#0f1722; color:var(--text); border:1px solid #2b3442; border-radius:12px; padding:12px;
+      width:100%; font:inherit;
+    }
+    textarea{min-height:120px; resize:vertical}
+    footer{margin:40px 0 20px; color:var(--muted); text-align:center}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media (max-width: 860px){
+      .hero{grid-template-columns: 1fr; padding:24px}
+      .about{grid-template-columns: 1fr}
+      .navlinks{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav wrap">
+      <div class="brand">
+        <img src="assets/profile.png" alt="Profile photo of Mark Calatero" width="36" height="36">
+        <span>Mark Calatero</span>
+      </div>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="https://github.com/MakuLT" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <a class="btn" href="mailto:you@example.com">Email me</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="home">
+      <div>
+        <h1>Hi, I'm Mark — a builder of clean, responsive web apps.</h1>
+        <p>I enjoy turning ideas into fast, user-friendly experiences. Below are a few things I’ve worked on and the tools I like using.</p>
+        <div class="chips">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">PHP</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">Blazor / C#</span>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="#projects">See my work</a>
+          <a class="btn" href="https://github.com/MakuLT" target="_blank" rel="noopener">Visit GitHub</a>
+        </div>
+      </div>
+      <div class="avatar" aria-hidden="true">
+        <img src="assets/profile.png" alt="">
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid projects">
+        <article class="card">
+          <h3>GitHub Portfolio</h3>
+          <p>A clean starter to showcase my repositories and work history.</p>
+          <div class="meta">
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
+          <p><a href="https://github.com/MakuLT/github-portfolio" target="_blank" rel="noopener">Open repository →</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Sari‑Sari Store POS</h3>
+          <p>PHP + MySQL Point-of-Sale with cart, categories, and receipt export.</p>
+          <div class="meta">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Bootstrap</span>
+          </div>
+          <p><span class="muted">Private repo / on request</span></p>
+        </article>
+
+        <article class="card">
+          <h3>Student Records CRUD</h3>
+          <p>Blazor Web App that performs CRUD on XML-backed student records.</p>
+          <div class="meta">
+            <span class="tag">.NET 8</span>
+            <span class="tag">Blazor</span>
+            <span class="tag">XML</span>
+          </div>
+          <p><span class="muted">Demo available on request</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="blurb">
+        <h2>About me</h2>
+        <p>
+          I’m a developer focused on practical solutions and good UX. 
+          I like building with lightweight stacks and keeping performance, accessibility, and readability in mind.
+        </p>
+        <p>
+          Outside of coding, you’ll probably find me exploring nature and waterfalls — the photo above was from one of those trips! 
+        </p>
+      </div>
+      <div class="blurb">
+        <h2>Skills</h2>
+        <div class="skills">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">PHP</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">C#</span>
+          <span class="tag">Blazor</span>
+          <span class="tag">Git & GitHub</span>
+          <span class="tag">Responsive Design</span>
+          <span class="tag">REST APIs</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <div class="grid" style="grid-template-columns:1.2fr .8fr">
+        <article class="card">
+          <form onsubmit="return sendMail(event)">
+            <label class="sr-only" for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required>
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Email address" required>
+            <label class="sr-only" for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Say hello…" required></textarea>
+            <button class="btn primary" type="submit">Send</button>
+            <p id="formStatus" aria-live="polite" style="color:var(--muted); margin:6px 2px 0"></p>
+          </form>
+        </article>
+        <article class="card">
+          <h3>Elsewhere</h3>
+          <p><strong>GitHub:</strong> <a href="https://github.com/MakuLT" target="_blank" rel="noopener">github.com/MakuLT</a></p>
+          <p><strong>Email:</strong> <a href="mailto:you@example.com">you@example.com</a></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>© <span id="year"></span> Mark Calatero • Built with plain HTML/CSS/JS</p>
+  </footer>
+
+  <script>
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+
+    function sendMail(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      // Use a mailto link for simple delivery; replace the address below with your real email.
+      const to = 'you@example.com';
+      const subject = encodeURIComponent('Portfolio contact from ' + name);
+      const body = encodeURIComponent(message + '\n\nFrom: ' + name + ' <' + email + '>');
+      const href = `mailto:${to}?subject=${subject}&body=${body}`;
+      window.location.href = href;
+      document.getElementById('formStatus').textContent = 'Opening your email client…';
+      return false;
+    }
+  </script>
+</body>
+</html>
