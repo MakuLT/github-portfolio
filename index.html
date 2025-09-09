@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mark Andrie D. Calatero • Portfolio</title>
+  <title>Mark Andrie D. Calatero • Portfolio</title> <!-- UPDATED -->
   <meta name="description" content="The portfolio of Mark Andrie D. Calatero — projects, skills, and contact." />
   <meta name="color-scheme" content="dark light">
   <link rel="preload" as="image" href="assets/profile.png">
@@ -118,8 +118,8 @@
   <header>
     <div class="nav wrap">
       <div class="brand">
-        <img src="assets/profile.png" alt="Profile photo of Mark Andrie D. Calatero" width="36" height="36">
-        <span>Mark Calatero</span>
+        <img src="assets/profile.png" alt="Profile photo of Mark Andrie D. Calatero" width="36" height="36"> <!-- UPDATED -->
+        <span>Mark Andrie D. Calatero</span> <!-- UPDATED -->
       </div>
       <nav class="navlinks" aria-label="Primary">
         <a href="#projects">Projects</a>
@@ -127,41 +127,23 @@
         <a href="#contact">Contact</a>
         <a class="btn" href="https://github.com/MakuLT" target="_blank" rel="noopener">GitHub</a>
       </nav>
-      <a class="btn" href="mailto:calateromarkandrie@example.com">Email me</a>
-    </div>
-  </header>
-
-  <main class="wrap">
-   </head>
-<body>
-  <header>
-    <div class="nav wrap">
-      <div class="brand">
-        <img src="assets/profile.png" alt="Profile photo of Mark Andrie D. Calatero" width="36" height="36">
-        <span>Mark Andrie D. Calatero</span>
-      </div>
-      <nav class="navlinks" aria-label="Primary">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a class="btn" href="https://github.com/MakuLT" target="_blank" rel="noopener">GitHub</a>
-      </nav>
-      <a class="btn" href="mailto:calateromarkandrie@gmail.com">Email me</a>
+      <a class="btn" href="mailto:calateromarkandrie@gmail.com">Email me</a> <!-- UPDATED -->
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero" id="home">
       <div>
-        <h1>Hi, I'm Mark Andrie D. Calatero — a builder of clean, responsive web apps.</h1>
-        ...
+        <h1>Hi, I'm Mark Andrie — a builder of clean, responsive web apps.</h1> <!-- UPDATED -->
+        <p>I enjoy turning ideas into fast, user-friendly experiences. Below are a few things I’ve worked on and the tools I like using.</p>
+        <!-- (rest unchanged) -->
       </div>
       <div class="avatar" aria-hidden="true">
         <img src="assets/profile.png" alt="">
       </div>
     </section>
 
-    ...
+    <!-- ... other sections ... -->
 
     <section id="contact" class="contact">
       <h2>Contact</h2>
@@ -181,14 +163,14 @@
         <article class="card">
           <h3>Elsewhere</h3>
           <p><strong>GitHub:</strong> <a href="https://github.com/MakuLT" target="_blank" rel="noopener">github.com/MakuLT</a></p>
-          <p><strong>Email:</strong> <a href="mailto:calateromarkandrie@gmail.com">calateromarkandrie@gmail.com</a></p>
+          <p><strong>Email:</strong> <a href="mailto:calateromarkandrie@gmail.com">calateromarkandrie@gmail.com</a></p> <!-- UPDATED -->
         </article>
       </div>
     </section>
   </main>
 
   <footer class="wrap">
-    <p>© <span id="year"></span> Mark Andrie D. Calatero • Built with plain HTML/CSS/JS</p>
+    <p>© <span id="year"></span> Mark Andrie D. Calatero • Built with plain HTML/CSS/JS</p> <!-- UPDATED -->
   </footer>
 
   <script>
@@ -200,8 +182,8 @@
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const message = document.getElementById('message').value.trim();
-      // Updated to your real email
-      const to = 'calateromarkandrie@gmail.com';
+      // Use a mailto link for simple delivery; updated email
+      const to = 'calateromarkandrie@gmail.com'; // UPDATED
       const subject = encodeURIComponent('Portfolio contact from ' + name);
       const body = encodeURIComponent(message + '\\n\\nFrom: ' + name + ' <' + email + '>');
       const href = `mailto:${to}?subject=${subject}&body=${body}`;
